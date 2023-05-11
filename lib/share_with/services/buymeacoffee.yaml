@@ -1,0 +1,65 @@
+---
+:info:
+  :name: 'Buy me a Coffee'
+  :classname: 'buymeacoffee'
+  :home_page: 'https://buymeacoffee.com'
+  :language_area: :general
+  :description: |-
+    A free, fast, and beautiful way to receive one-time and monthly support from your fans.
+  :link: 'https://www.buymeacoffee.com/<params.code>'
+  :inherit_from: '_base'
+  :si_icon: 'buymeacoffee'
+  :fa_icon: 'fas fa-coffee'
+  :bi_icon: 'bi-cup-hot'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:params:
+  :code:
+    :type: :encoded_url_param
+    :default: ''
+
+  :slogan:
+    :type: :plain_text
+    :default: 'Buy Me A Coffee'
+
+  :font:
+    :type: :select
+    :default: 'default'
+    :options:
+      default: 'Default'
+      arial: 'Arial'
+      lato: 'Lato'
+
+  :color:
+    :type: :select
+    :default: 'yellow'
+    :options:
+      orange: 'Orange'
+      yellow: 'Yellow'
+      violet: 'Violet'
+      black: 'Black'
+      white: 'White'
+      blue: 'Blue'
+      green: 'Green'
+      red: 'Red'
+      pink: 'Pink'
+
+
+:templates:
+  :button:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          target: '_blank'
+        :content:
+          img:
+            :attr:
+              src: 'https://cdn.buymeacoffee.com/buttons/<params.font.key>-<params.color.key>.png'
+              alt: '<params.slogan>'
+              style: 'height: 51px !important;width: 217px !important;'
+
+#<a href="https://www.buymeacoffee.com/DCkNYFg" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/arial-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+#<a href="https://www.buymeacoffee.com/DCkNYFg" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+#

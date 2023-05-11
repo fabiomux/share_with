@@ -1,0 +1,24 @@
+---
+:info:
+  :name: 'Email'
+  :classname: 'email'
+  :home_page: 'none'
+  :description: 'Simple mailto protocol'
+  :link: 'mailto:<params.email>?subject=<params.subject>&body=<params.body>'
+  :inherit_from: '_base'
+  :si_icon: 'gmail'
+  :fa_icon: 'fas fa-envelope'
+  :bi_icon: 'bi-envelope'
+  :extend_with:
+  - 'icons.font_awesome'
+
+:params:
+  :subject:
+    :type: :encoded_url_param
+    :default: ''
+  :email:
+    :type: :plain_text
+    :default: ''
+  :body:
+    :type: :encoded_url_param
+    :default: ''

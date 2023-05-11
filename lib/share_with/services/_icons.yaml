@@ -1,0 +1,121 @@
+---
+custom_icons:
+  :params:
+    :folder:
+      default: '/assets/icons/services'
+      type: :encoded_url_param
+    :format:
+      :type: :select
+      :default: 'png'
+      :options:
+        png:
+          :value: 'png'
+        svg:
+          :value: 'svg'
+        jpg:
+          :value: 'jpg'
+    :icon_size:
+      :type: :select
+      :default: 'large'
+      :options:
+        small:
+          :value: '<params.folder>/small/<info.classname>.<params.format>'
+          :attr:
+            width: 20
+            height: 20
+        medium:
+          :value: '<params.folder>/medium/<info.classname>.<params.format>'
+          :attr:
+            width: 30
+            height: 30
+        large:
+          :value: '<params.folder>/large/<info.classname>.<params.format>'
+          :attr:
+            width: 48
+            height: 48
+
+simple_icons:
+  :params:
+    :icon_size:
+      :type: :select
+      :default: 'large'
+      :options:
+        small:
+          :value: 'https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.6.0/<info.si_icon>.svg'
+          :attr:
+            width: 20
+            height: 20
+        medium:
+          :value: 'https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.6.0/<info.si_icon>.svg'
+          :attr:
+            width: 30
+            height: 30
+        large:
+          :value: 'https://cdnjs.cloudflare.com/ajax/libs/simple-icons/8.6.0/<info.si_icon>.svg'
+          :attr:
+            width: 48
+            height: 48
+
+bootstrap_icons:
+  :params:
+    :icon_size:
+      :type: :select
+      :default: 'large'
+      :options:
+        small:
+          :value: '<info.bi_icon>'
+          :attr:
+            size: '20px'
+        medium:
+          :value: '<info.bi_icon>'
+          :attr:
+            size: '30px'
+        large:
+          :value: '<info.bi_icon>'
+          :attr:
+            size: '48px'
+  :includes:
+    :service_icon:
+      :content:
+        i:
+          attr:
+            class: '<params.icon_size.value>'
+            style: 'font-size:<params.icon_size.attr.size>'
+          :content: ''
+
+font_awesome:
+  :params:
+    :shape:
+      :type: :select
+      :default: 'none'
+      :options:
+        none:
+          :value: ''
+        square:
+          :value: '-square'
+    :icon_size:
+      :type: :select
+      :default: 'large'
+      :options:
+        small:
+          :value: '<info.fa_icon>'
+          :attr:
+            size: '20px'
+        medium:
+          :value: '<info.fa_icon>'
+          :attr:
+            size: '30px'
+        large:
+          :value: '<info.fa_icon>'
+          :attr:
+            size: '48px'
+  :includes:
+    :service_icon:
+      :content:
+        i:
+          :attr:
+            class: '<params.icon_size.value><params.shape.value>'
+            style: 'font-size:<params.icon_size.attr.size>'
+          :content: ''
+
+

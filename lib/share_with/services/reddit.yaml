@@ -1,0 +1,17 @@
+---
+:info:
+  :name: 'Reddit'
+  :classname: 'reddit'
+  :home_page: 'https://www.redditinc.com'
+  :description: |-
+    Reddit is home to thousands of communities, endless conversation, and authentic human connection.
+    Whether you're into breaking news, sports, TV fan theories, or a never-ending stream of the internet's
+    cutest animals, there's a community on Reddit for you.
+  :link: 'http://reddit.com/submit?url=<params.url>&title=<params.title>'
+  :inherit_from: '_base'
+  :si_icon: 'reddit'
+  :fa_icon: 'fab fa-reddit'
+  :bi_icon: 'bi-reddit'
+  :extend_with:
+  - 'icons.simple_icons'
+

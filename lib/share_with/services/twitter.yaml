@@ -1,0 +1,64 @@
+---
+:info:
+  :name: 'Twitter'
+  :classname: 'twitter'
+  :home_page: 'https://twitter.com'
+  :language_area: :general
+  :description: |-
+    Twitter is what's happening in the world and what people are talking about right now.
+  :link: 'https://twitter.com/share?text=<params.title>&url=<params.url>[&via=<params.via>]&related=<params.related>&hashtags=<params.hashtags>'
+  :inherit_from: '_base'
+  :si_icon: 'twitter'
+  :fa_icon: 'fab fa-twitter'
+  :bi_icon: 'bi-twitter'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:params:
+  :related:
+    :default: ''
+    :type: :string_list
+  :hashtags:
+    :default: ''
+    :type: :string_list
+  :via:
+    :default: ''
+    :type: :encoded_url_param
+  :data_url:
+    :default: ''
+    :type: :plain_text
+  :data_size:
+    :type: :select
+    :default: 'large'
+    :options:
+      small: 'Small'
+      large: 'Large'
+  :data_text:
+    :type: :encoded_text
+    :default: ''
+
+:templates:
+  :button:
+    :requires: :head_js
+    :content:
+      a:
+        :attr:
+          href: 'https://twitter.com/share'
+          class: 'twitter-share-button'
+          data-text: '<params.data_text>'
+          data-url: '<params.data_url>'
+          data-hashtags: '<params.hashtags>'
+          data-related: '<params.related>'
+          data-via: '<params.via>'
+          data-size: '<params.data_size.key>'
+          data-show-count: 'false'
+        :content: 'Tweet'
+  :head_js:
+    :content:
+      script:
+        :attr:
+          type: 'text/javascript'
+          async:
+          src: 'https://platform.twitter.com/widgets.js'
+          charset: 'utf-8'
+        :content: ''

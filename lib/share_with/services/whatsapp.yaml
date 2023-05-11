@@ -1,0 +1,46 @@
+---
+:info:
+  :name: 'Whatsapp'
+  :classname: 'whatsapp'
+  :language_area: :general
+  :description: |-
+    Whatsapp is an instant messaging and voice over IP service.
+  :link: 'whatsapp://send?text=<params.title>%20<params.url>'
+  :inherit_from: '_base'
+  :si_icon: 'whatsapp'
+  :fa_icon: 'fab fa-whatsapp'
+  :bi_icon: 'bi-whatsapp'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:templates:
+  :icon:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.icon>'
+          data-action: 'share/whatsapp/share'
+          target: '_blank'
+        :content: '<includes.service_icon>'
+  :icon_and_text:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.icon>'
+          data-action: 'share/whatsapp/share'
+          target: '_blank'
+        :content: '<includes.service_icon> <info.name>'
+  :text:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.icon>'
+          data-action: 'share/whatsapp/share'
+          target: '_blank'
+        :content: '<info.name>'

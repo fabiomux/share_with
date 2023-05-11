@@ -1,0 +1,14 @@
+---
+:info:
+  :name: 'Telegram'
+  :classname: 'telegram'
+  :language_area: :general
+  :description: |-
+    Telegram is a cloud-based instant messaging and voice over IP service.
+  :link: 'https://telegram.me/share/url?url=<params.url>&text=<params.title>'
+  :inherit_from: '_base'
+  :si_icon: 'telegram'
+  :fa_icon: 'fab fa-telegram-plane'
+  :bi_icon: 'bi-telegram'
+  :extend_with:
+  - 'icons.simple_icons'

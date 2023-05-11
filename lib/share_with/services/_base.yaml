@@ -1,0 +1,77 @@
+---
+:info:
+  :name: 'Service Name'
+  :classname: 'service-name'
+  :home_page: 'https://...'
+  :language_area: :general
+  :link: 'http://sharing-url.com/plus/path/and/tags?url=<params.url>&title=<params.title>[&nullable=<params.null>]'
+  :description: 'Service description used only as documentation'
+
+:params:
+  :icon: '<params.icon_size.value>'
+  :icon_size:
+    :type: :select
+    :default: 'large'
+    :options:
+      small:
+        :value: 'https://cdn...'
+        :label: 'Small'
+        :attr:
+          url: ''
+          width: 20
+          height: 20
+      medium:
+        :value: '...'
+        :label: 'Medium'
+        :attr:
+          width: 30
+          height: 30
+      large:
+        :value: '...'
+        :label: 'Large'
+        :attr:
+          width: 48
+          height: 48
+  :icon_width: '<params.icon_size.attr.width>'
+  :icon_height: '<params.icon_size.attr.height>'
+  :title:
+    :default: ''
+    :type: :encoded_url_param
+  :url:
+    :default: ''
+    :type: :encoded_url_param
+
+:includes:
+  :service_icon:
+    :content:
+      img:
+        :attr:
+          src: '<params.icon>'
+          alt: 'Share with <info.name>'
+          width: '<params.icon_width>'
+          height: '<params.icon_height>'
+:templates:
+  :icon:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.classname>'
+        :content: '<includes.service_icon>'
+  :icon_and_text:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.classname>'
+        :content: '<includes.service_icon> <info.name>'
+  :text:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          title: 'Share with <info.name>'
+          class: 'share-with-<info.classname>'
+        :content: '<info.name>'

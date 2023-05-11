@@ -1,0 +1,78 @@
+---
+:info:
+  :name: 'Pinterest'
+  :classname: 'pinterest'
+  :home_page: 'https://pinterest.com'
+  :description: ''
+  :link: 'http://pinterest.com/pin/create/button/?url=<params.url>&description=<params.title>&media=<params.media_url>'
+  :inherit_from: '_base'
+  :si_icon: 'pinterest'
+  :fa_icon: 'fab fa-pinterest'
+  :bi_icon: 'bi-pinterest'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:params:
+  :media_url:
+    :type: :encoded_url_param
+    :default: ''
+  :icon_size:
+    :type: :select
+    :default: 16
+    :options:
+      16: 'Small'
+      32: 'Large'
+  :data_counter:
+    :type: :select
+    :default: 'above'
+    :options:
+      none: 'None'
+      beside: 'Beside'
+      above: 'Above'
+  :data_pin_tall:
+    :type: :boolean
+    :default: false
+  :data_pin_round:
+    :type: :boolean
+    :default: false
+
+:templates:
+  :button_hover:
+    :content:
+      script:
+        :attr:
+          async:
+          defer:
+          data-pin-hover: 'true'
+          data-pin-tall: '<params.data_pin_tall>'
+          data-pin-round: '<params.data_pin_round>'
+          src: '//assets.pinterest.com/js/pinit.js'
+        :content: ''
+  :button_any_image:
+    :requires: :head_js
+    :content:
+      a:
+        :attr:
+          href: '<params.link>'
+          data-pin-do: 'buttonBookmark'
+        :content: ''
+  :button_one_image:
+    :requires: :head_js
+    :content:
+      a:
+        :attr:
+          href: '<params.link>'
+          data-pin-do: 'buttonPin'
+          data-pin-count: '<params.data_counter.key>'
+          data-pin-tall: '<params.data_pin_tall>'
+          data-pin-round: '<params.data_pin_round>'
+        :content: ''
+  :head_js:
+    :content:
+      script:
+        :attr:
+          type: 'text/javascript'
+          async:
+          defer:
+          src: '//assets.pinterest.com/js/pinit.js'
+        :content: ''

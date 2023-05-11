@@ -1,0 +1,69 @@
+---
+:info:
+  :name: 'Flipboard'
+  :classname: 'flipboard'
+  :home_page: 'https://flipboard.com'
+  :language_area: :general
+  :description: |-
+    Flipboard was founded as one place to find the stories for your day,
+    bringing together your favorite news sources with social content,
+    to give a deep view into everything from political issues to technology
+    trends to travel inspiration.
+  :link: 'https://share.flipboard.com/bookmarklet/popout?v=2&title=<params.title>&url=<params.url>'
+  :inherit_from: '_base'
+  :si_icon: 'flipboard'
+  :fa_icon: 'fab fa-flipboard'
+  :bi_icon: 'bi-box-arrow-up'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:params:
+  :size:
+    :type: :select
+    :default: medium
+    :options:
+      small:
+        :value: 's'
+      medium:
+        :value: 'm'
+      large:
+        :value: 'l'
+  :color:
+    :type: :select
+    :default: black
+    :options:
+      black:
+        :value: 'b'
+      red:
+        :value: 'r'
+      white:
+        :value: 'w'
+  :shape:
+    :type: :select
+    :default: round
+    :options:
+      round:
+        :value: 'r'
+      squared:
+        :value: 's'
+
+:templates:
+  :head_js:
+    :content:
+      script:
+        :attr:
+          src: 'https://cdn.flipboard.com/web/button/js/flbuttons.min.js'
+          type: 'text/javascript'
+        :content: ''
+  :button_js:
+    :requires: :head_js
+    :content:
+      a:
+        :attr:
+          data-flip-widget: 'shareflip'
+          href: '<params.url>'
+        :content:
+          img:
+            :attr:
+              src: 'https://cdn.flipboard.com/badges/flipboard_<params.size.value><params.color.value><params.shape.value>w.png'
+

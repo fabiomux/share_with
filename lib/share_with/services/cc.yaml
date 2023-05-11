@@ -1,0 +1,66 @@
+---
+:info:
+  :name: 'Creative Commons'
+  :classname: 'creative-common'
+  :home_page: 'https://creativecommons.org'
+  :language_area: :general
+  :link: 'http://creativecommons.org/licenses/<params.license_code.key>/<params.license_version.value>/'
+  :description: 'Creative Commons License'
+  :cc_icon: 'https://i.creativecommons.org/l/<params.license_code.key>/4.0/<params.icon_size.value>.png'
+
+:params:
+  :license_code:
+    :type: :select
+    :default: 'by'
+    :options:
+      by: 'Attribution'
+      by-nd: 'Attribution-NoDerivative'
+      by-sa: 'Attribution-ShareAlike'
+      by-nc: 'Attribution-NoCommercial'
+      by-nc-nd: 'Attribution-NoCommercial-NoDerivative'
+      by-nc-sa: 'Attribution-NoCommercial-ShareAlike'
+  :icon_size:
+    :type: :select
+    :default: 'big'
+    :options:
+      big: '88x31'
+      small: '88x15'
+  :license_version:
+    :type: :select
+    :default: 'v40'
+    :options:
+      v30: '3.0'
+      v35: '3.5'
+      v40: '4.0'
+
+:includes:
+  :link:
+    :content:
+      a:
+        :attr:
+          href: '<info.link>'
+          rel: 'license'
+        :content: 'Creative Commons <params.license_code.value> <params.license_version.value> International License'
+  :text:
+    :content: 'This work is licensed under a <includes.link>'
+  :icon:
+    :content:
+      a:
+        :attr:
+          rel: 'license'
+          href: '<info.link>'
+        :content:
+          img:
+            :attr:
+              alt: 'Creative Commons License'
+              style: 'border-width:0'
+              src: '<info.cc_icon>'
+
+:templates:
+  :icon_and_text:
+    :content: '<includes.icon> <includes.text>'
+  :icon:
+    :content: '<includes.icon>'
+  :text:
+    :content: '<includes.text>'
+

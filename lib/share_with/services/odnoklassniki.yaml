@@ -1,0 +1,18 @@
+---
+:info:
+  :name: 'Odnoklassniki'
+  :classname: 'odnoklassniki'
+  :home_page: 'https://ok.ru'
+  :language_area: :russian
+  :description: |-
+    Odnoklassniki, OK.ru is a social network service for classmates and old friends.
+    It is especially used in Russia and former Soviet Republics.
+    The site was developed by Albert Popkov and launched on March 4, 2006.
+  :link: 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=<params.url>'
+  :inherit_from: '_base'
+  :si_icon: 'odnoklassniki'
+  :fa_icon: 'fas fa-odnoklassniki'
+  :bi_icon: 'bi-person'
+  :extend_with:
+  - 'icons.simple_icons'
+

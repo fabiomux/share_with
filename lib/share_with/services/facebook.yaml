@@ -1,0 +1,89 @@
+---
+:info:
+  :name: 'Facebook'
+  :classname: 'facebook'
+  :home_page: 'https://facebook.com'
+  :description: ''
+  :link: 'https://www.facebook.com/sharer.php?u=<params.url>&t=<params.title>'
+  :inherit_from: '_base'
+  :si_icon: 'facebook'
+  :fa_icon: 'fab fa-facebook'
+  :bi_icon: 'bi-facebook'
+  :extend_with:
+  - 'icons.simple_icons'
+
+:params:
+  :data_url:
+    :type: :plain_text
+    :default: ''
+  :data_layout:
+    :type: :select
+    :default: 'button_count'
+    :options:
+      box_count: 'Box Count'
+      button_count: 'Button Count'
+      button: 'Button'
+  :data_size:
+    :type: :select
+    :default: 'small'
+    :options:
+      small: 'Small'
+      large: 'Large'
+  :data_action:
+    :type: :select
+    :default: 'like'
+    :options:
+      like: 'Like'
+      recommend: 'Recommend'
+  :data_share:
+    :type: :boolean
+    :default: false
+  :data_show_faces:
+    :type: :boolean
+    :default: false
+
+:includes:
+  :fb_root:
+    :content:
+      div:
+        :attr:
+          id: 'fb-root'
+        :content: ''
+  :js:
+    :content:
+      script:
+        :content: |-
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+
+:templates:
+  :share_button:
+    :requires: :head_js
+    :content:
+      div:
+        :attr:
+          class: 'fb-share-button'
+          data-href: '<params.data_url>'
+          data-layout: '<params.data_layout.key>'
+          data-size: '<params.data_size.key>'
+        :content: ''
+  :like_button:
+    :requires: :head_js
+    :content:
+      div:
+        :attr:
+          class: 'fb-like'
+          data-href: '<params.data_url>'
+          data_layout: '<params.data_layout.key>'
+          data_action: '<params.data_action.key>'
+          data_share: '<params.data_share>'
+          data_show_faces: '<params.data_show_faces>'
+        :content: ''
+  :head_js:
+    :content: '<includes.fb_root> <includes.js>'
+
