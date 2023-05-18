@@ -24,7 +24,7 @@
     :default: 'big'
     :options:
       big: '88x31'
-      small: '88x15'
+      small: '80x15'
   :license_version:
     :type: :select
     :default: 'v40'
