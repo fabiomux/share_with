@@ -45,7 +45,7 @@ Finally we get the HTML code as a text string:
 ## More Help
 
 - the [project page on the Freeaptitude blog][project_page];
-- the [Jekyll-Disqus Github wiki][share_with_wiki].
+- the [ShareWith Github wiki][share_with_wiki].
 
 [project_page]: https://freeaptitude.altervista.org/projects/share-with.html "Project page on the Freeaptitude blog"
 [share_with_wiki]: https://github.com/fabiomux/share_with/wiki "ShareWith wiki page on GitHub"
